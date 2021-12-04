@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 
 // for credential  data
 require('dotenv').config();
@@ -17,6 +18,15 @@ app.use(cors());
 // app.use('/', (req, res)=>{
 // 	res.json({msg: 'Welcome to our API'})
 // })
+//
+if (process.env.NODE_ENV === 'production') {
+	// app.use(express.static('../client/build'));
+	app.use(express.static(path.join(__dirname, '../client/build')));
+}
+
+// app.get('/', (req, res) => {
+// 	res.send('he');
+// });
 
 // add user routes
 const usersRoutes = require('./routes/userRoutes.js');
@@ -25,13 +35,7 @@ app.use(usersRoutes);
 const contactsRoutes = require('./routes/contactRoutes.js');
 app.use(contactsRoutes);
 
-//
-if (process.env.NODE_ENV == 'production') {
-	app.use(express.static('../client/build'));
-}
-
 const connect = require('./db/connectDB');
-
 connect((database) => {
 	app.listen(port, () => {
 		console.log(`Server running at http://localhost:${port}`);

@@ -6,9 +6,9 @@ function connect(callback) {
 			console.log('Connection failed');
 			console.log(err);
 			process.exit(1);
+		} else {
+			console.log('Connected to database');
 		}
-		console.log('Connected to database');
-
 		// callback function to send database object
 		callback(database.db(process.env.DB_NAME));
 	});
