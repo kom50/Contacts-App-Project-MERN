@@ -8,17 +8,10 @@ const Item = ({ value }) => {
 			<Link
 				to={{
 					pathname: '/view_contacts',
-					// search: '?sort=name',
 					state: { value },
 				}}
 				style={{ textDecoration: 'none' }}>
-				<li
-					className={` list-group-item list-group-item-action`}
-					// onClick={() => {
-					// 	console.log('view');
-					// 	history.push('/view_contacts', value);
-					// }}
-				>
+				<li className={` list-group-item list-group-item-action`}>
 					{value.first_name}
 				</li>
 			</Link>

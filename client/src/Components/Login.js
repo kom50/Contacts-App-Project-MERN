@@ -15,7 +15,6 @@ const Login = () => {
 
 	//
 	const history = useHistory();
-	console.log(history);
 
 	const changeHandler = (event) => {
 		setUser({ ...user, [event.target.name]: event.target.value });
@@ -23,7 +22,6 @@ const Login = () => {
 
 	const submitHandler = async (event) => {
 		event.preventDefault();
-		console.log('submit handler');
 		let msg;
 		try {
 			const result = await Axios.get(`/users/${user.username}`);
@@ -32,9 +30,7 @@ const Login = () => {
 				user.password,
 				result.data.password
 			);
-			console.log('match ', match);
 
-			console.log(result);
 			if (match) {
 				setLogin(true);
 				msg = 'Login successful';
@@ -46,7 +42,6 @@ const Login = () => {
 			}
 		} catch (err) {
 			msg = err;
-			console.log(err);
 		}
 		Toast.makeToast(msg, Toast.LONG);
 	};

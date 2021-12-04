@@ -69,7 +69,6 @@ const NewContact = () => {
 			msg = 'Plz fill all fields';
 		} else {
 			if (!isEdit) {
-				console.log('new contacts');
 				try {
 					/* const result =  */ await Axios.post(
 						`/contacts/?username=${user.username}`,

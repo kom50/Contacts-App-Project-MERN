@@ -13,7 +13,6 @@ import Item from './Item';
 
 import { context } from '../ContextStore/Store';
 const Home = () => {
-	console.log('home page');
 	//
 	let history = useHistory();
 
@@ -29,11 +28,7 @@ const Home = () => {
 		setAllContacts,
 	} = contextData;
 
-	console.log('contacts ', contacts, isLoggedIn);
-	console.log(contextData);
-
 	useEffect(() => {
-		console.log('Home page effect');
 		if (window.localStorage.getItem('username')) {
 			setUser({
 				...user,
@@ -60,7 +55,6 @@ const Home = () => {
 	};
 
 	const logoutHandler = (event) => {
-		console.log('Logout Handler');
 		setAnchorEl(null);
 		setLogin(false);
 		setUser({

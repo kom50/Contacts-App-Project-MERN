@@ -20,13 +20,8 @@ app.use(cors());
 // })
 //
 if (process.env.NODE_ENV === 'production') {
-	// app.use(express.static('../client/build'));
 	app.use(express.static(path.join(__dirname, '../client/build')));
 }
-
-// app.get('/', (req, res) => {
-// 	res.send('he');
-// });
 
 // add user routes
 const usersRoutes = require('./routes/userRoutes.js');

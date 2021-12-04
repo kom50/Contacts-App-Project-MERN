@@ -21,7 +21,6 @@ const ViewContact = () => {
 	let history = useHistory();
 
 	let location = useLocation();
-	console.log('location ', location.state.value);
 	let data = location.state.value;
 
 	let arr = [];
@@ -37,16 +36,12 @@ const ViewContact = () => {
 		arr.push(data[key]);
 	}
 
-	console.log(arr);
-
 	const deleteHandler = async (event) => {
-		console.log('delete handler');
 		let msg;
 		try {
-			const result = await Axios.delete(
+			/* const result =  */ await Axios.delete(
 				`contacts/${arr[0]}/?username=${user.username}`
 			);
-			console.log('delete ', result);
 			history.push('/');
 			msg = 'Delete contacts';
 		} catch (err) {

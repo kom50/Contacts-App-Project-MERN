@@ -16,7 +16,6 @@ function App() {
 		<BrowserRouter>
 			<div className="app">
 				<Switch>
-					{/* Switch - use when we add page not found page in our react application. this component render only matches component */}
 					<Route path="/" component={Home} exact />
 					<Route path="/account" component={Account} exact />
 					<Route path="/login" component={Login} exact />

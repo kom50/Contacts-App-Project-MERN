@@ -17,16 +17,13 @@ const Account = () => {
 		c_password: '',
 	});
 	let history = useHistory();
-	console.log(history);
 
 	const changeHandler = (event) => {
-		console.log('Change handler');
 		const name = event.target.name;
 		const value = event.target.value;
 		setUser({ ...user, [name]: value });
 	};
 	const submitHandler = async (event) => {
-		// console.log('Submit handler ');
 		let msg = '';
 		if (
 			!user.username ||
@@ -40,16 +37,13 @@ const Account = () => {
 		} else {
 			//password hashing
 			const hash = await bcrypt.hash(user.password, 10);
-			console.log(hash);
 			user.password = hash;
-			console.log(user);
 			delete user.c_password;
 
 			try {
-				const result = await axios.post('/users', {
+				/* const result =  */ await axios.post('/users', {
 					...user,
 				});
-				console.log(result);
 				msg = 'Account created successful';
 
 				setUser({
@@ -60,13 +54,9 @@ const Account = () => {
 				});
 			} catch (err) {
 				msg = err;
-				console.log('Error', err);
 			}
 			history.push('/login');
 		}
-		console.log(!user.username);
-
-		console.log(msg);
 		Toast.makeToast(msg, Toast.LONG);
 	};
 	return (

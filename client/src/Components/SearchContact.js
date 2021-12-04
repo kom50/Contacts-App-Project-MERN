@@ -20,25 +20,19 @@ const SearchContact = () => {
 	const filter = (value) => {
 		seFilteredContacts(
 			contacts.filter((data, index) => {
-				console.log(data);
-				console.log(data.first_name.includes(value));
 				return data.first_name.includes(value);
 			})
 		);
-		console.log('filtered data, ', filteredContacts);
 	};
 
 	const findHandler = (event) => {
 		const value = event.target.value;
 		setValue(value);
-		console.log(event.target.value);
-
 		filter(value);
 	};
 
 	//  clear button
 	const isOpen = Boolean(value);
-	console.log('open ', isOpen);
 
 	const clearHandle = () => {
 		setValue('');
