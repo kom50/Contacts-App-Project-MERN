@@ -1,0 +1,40 @@
+.view {
+    /* background-color: aquamarine; */
+    overflow: hidden;
+}
+
+.nav {
+    width: 100%;
+    height: 80px;
+    /* border-bottom: 1px solid gray; */
+    box-shadow: 0 0 1px gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* .nav span {
+    padding-left: 5px;
+    padding-right: 5px;
+} */
+
+.nav span:nth-child(2) {
+    margin-left: auto;
+}
+
+
+/*  */
+
+.view_contact_list {
+    /* background-color: red; */
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-weight: 600;
+}

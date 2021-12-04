@@ -1,0 +1,26 @@
+.account {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    width: 500px;
+    box-shadow: 0 0 2px gray;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+@media screen and (max-width: 400px) {
+    .center {
+        width: 100%;
+        box-shadow: 0 0 0px gray;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

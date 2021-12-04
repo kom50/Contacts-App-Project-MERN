@@ -1,0 +1,40 @@
+.nav {
+    height: 80px;
+    box-shadow: 0 0 1px gray;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 100%;
+    padding-top: 10px;
+}
+
+.icons .icon {
+    cursor: pointer;
+}
+
+.form {
+    height: 85vh;
+    width: 500px;
+    overflow: auto;
+    /* background-color: rgb(209, 201, 201); */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.form div {
+    width: 100%;
+}
+
+@media screen and (max-width: 728px) {
+    .form {
+        width: 100%;
+    }
+}

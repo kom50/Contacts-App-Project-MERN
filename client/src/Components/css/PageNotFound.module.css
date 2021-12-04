@@ -1,0 +1,84 @@
+.page_not_found {
+    /* font-family: sans-serif; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h1 {
+    color: red;
+    font-size: 30px;
+    font-variant: small-caps;
+}
+
+.h1::after {
+    content: 'Page Not Found';
+    height: 100vh;
+    width: 80%;
+    height: 100px;
+    left: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    position: absolute;
+    color: rgba(192, 180, 180, 0.2);
+    /* background-color: rgb(216, 216, 235); */
+    text-align: center;
+    transform: rotate(5deg);
+    z-index: -1;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.back_btn {
+    height: 40px;
+    padding: 2% 25%;
+    text-decoration: none;
+    border-radius: 20px;
+    padding-top: 5px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    background-color: var(--bs-danger);
+    border: 1px solid rgb(250, 107, 107);
+    color: white;
+    transition: all 0.4s linear;
+    position: relative;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    font-family: sans-serif;
+}
+
+.back_btn:hover {
+    background-color: #f8485a;
+    color: white;
+}
+
+.back_btn span {
+    font-size: 32px;
+    position: absolute;
+    right: -5px;
+    top: -8px;
+    color: rgb(255, 255, 255);
+    color: transparent;
+    transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+}
+
+.back_btn:hover span {
+    right: 25px;
+    color: rgb(255, 255, 255);
+}

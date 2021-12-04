@@ -1,0 +1,19 @@
+/* zoom Animation */
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes slide {
+    from {
+        bottom: 0;
+    }
+    to {
+        bottom: 10px;
+    }
+}
