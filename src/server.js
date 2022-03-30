@@ -19,9 +19,7 @@ app.use(cors());
 // 	res.json({msg: 'Welcome to our API'})
 // })
 //
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static(path.join(__dirname, '../client/build')));
-}
+
 
 // add user routes
 const usersRoutes = require('./routes/userRoutes.js');
@@ -29,6 +27,13 @@ app.use(usersRoutes);
 // add contacts routes
 const contactsRoutes = require('./routes/contactRoutes.js');
 app.use(contactsRoutes);
+
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static(path.join(__dirname, '../client/build')));
+	app.use('*', (req, res) => {
+		res.sendFile(path.join(__dirname, '../client/build/index.html'))
+	})
+}
 
 const connect = require('./db/connectDB');
 connect((database) => {
