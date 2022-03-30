@@ -14,7 +14,7 @@ router.use((req, res, next) => {
 
 //  endpoint /users
 /*  methods 
-     GET        find all users
+	 GET        find all users
 	 POST       add new user
  */
 router
@@ -56,7 +56,7 @@ router
 
 //   /users/:name     // users?name=om
 /*  methods 
-     GET        -> find single user by name
+	 GET        -> find single user by name
 	 PUT		-> update user document by name 
 	 DELETE      -> delete a user by name
  */

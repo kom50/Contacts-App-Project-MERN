@@ -8,6 +8,11 @@ import './index.css';
 import ContextStore from './ContextStore/Store';
 
 import App from './Components/App';
+// 
+if (process.env.NODE_ENV === 'production') {
+	// disable logs in production
+	console.log = () => { }
+}
 
 ReactDOM.render(
 	<ContextStore>
